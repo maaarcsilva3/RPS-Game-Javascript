@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Rock Paper Scissor
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles_.css"/>
+        <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+    </head>
+    <body>
+    
+        <div class="container">
+            <div class="content">
+                <h1>Rock Paper Scissors</h1>
+                
+
+                <div class="rounds">
+                    <p>Round: <span id="round-number">1</span></p>
+                </div>
+
+                
+
+                <div class="displayresult">
+                   
+                    <p id="result"></p>
+                   
+                </div>
+                
+
+                <p>Choose your weapon</p>
+
+                <!-- <button class="btn-warning" id="rock" onclick="btn_rock()"> Rock </button>
+                <button class="btn-success" id="paper" onclick="btn_paper() "> Paper </button>
+                <button class="btn-danger" id="scissor" onclick="btn_scissor() "> Scissor </button> -->
+                <div class="options">
+                    <img style="cursor: pointer;" src="pics\rps js pic\rock_pic.png" alt="Rock" onclick="btn_rock()" />
+                    <img style="cursor: pointer;" src="pics\rps js pic\paper_pic.jpg" alt="Paper" onclick="btn_paper()" />
+                    <img style="cursor: pointer;" src="pics\rps js pic\scissor_pic.png" alt="Scissor" onclick="btn_scissor()" />
+                </div>
+
+            </div>  
+
+
+        </div>
+      
+
+        <script>
+            let round = 0;
+            let your_score= 0;
+            let bot_score= 0;
+
+           function computer_choice() {
+                const choices = ["Rock", "Paper", "Scissors"];
+                const computer_option = Math.floor(Math.random() * choices.length); 
+                return choices[computer_option];
+           }
+
+            function btn_rock() {
+                const player_option = "Rock";
+                const computer_option = computer_choice();
+
+                if (player_option == computer_option ) {
+                    document.getElementById("result").innerHTML="Draw! Computer also chose Rock"
+                }
+                else if (computer_option === "Paper") {
+                    document.getElementById("result").innerHTML = "Computer chose Paper. Computer wins";
+                }
+                else if (computer_option === "Scissors") {
+                    document.getElementById("result").innerHTML = "Computer chose Scissors. You win";
+                }
+                round++;
+                document.getElementById("round-number").innerHTML = round;
+            }
+            function btn_paper() {
+                const player_option = "Paper";
+                const computer_option = computer_choice();
+                if (player_option == computer_option ) {
+                    document.getElementById("result").innerHTML="Draw! Computer also chose Paper"
+                }
+                else if (computer_option === "Scissors") {
+                    document.getElementById("result").innerHTML = "Computer chose Scissors. Computer wins";
+                }
+                else if (computer_option === "Rock") {
+                    document.getElementById("result").innerHTML = "Computer chose Rock. You win.";
+                }
+                round++;
+                document.getElementById("round-number").innerHTML = round;
+            }
+
+            function btn_scissor() {
+                const player_option = "Scissors";
+                const computer_option = computer_choice();
+                if (player_option == computer_option ) {
+                    document.getElementById("result").innerHTML="Draw! Computer also chose Scissors"
+                }
+                else if (computer_option === "Rock") {
+                    document.getElementById("result").innerHTML = "Computer chose Rock. Computer wins.";
+                }
+                else if (computer_option === "Paper") {
+                    document.getElementById("result").innerHTML = "Computer chose Paper. You win.";
+                }
+                round++;
+                document.getElementById("round-number").innerHTML = round;
+            }
+           
+            function mouseover(){
+
+            }
+
+
+        </script>
+
+
+
+    </body>
+</html>
