@@ -17,6 +17,8 @@
 
                 <div class="rounds">
                     <p>Round: <span id="round-number">1</span></p>
+                    <p>Your Score <span id="your-score">0</span></p>
+                    <p>Bot Score <span id="bot-score">0</span></p>
                 </div>
 
                 
@@ -65,9 +67,13 @@
                 }
                 else if (computer_option === "Paper") {
                     document.getElementById("result").innerHTML = "Computer chose Paper. Computer wins";
+                   bot_score++;
+                    document.getElementById("bot-score").innerHTML = bot_score;
                 }
                 else if (computer_option === "Scissors") {
                     document.getElementById("result").innerHTML = "Computer chose Scissors. You win";
+                    your_score++;
+                    document.getElementById("your-score").innerHTML = your_score;
                 }
                 round++;
                 document.getElementById("round-number").innerHTML = round;
@@ -80,9 +86,14 @@
                 }
                 else if (computer_option === "Scissors") {
                     document.getElementById("result").innerHTML = "Computer chose Scissors. Computer wins";
+                    bot_score++;
+                    document.getElementById("bot-score").innerHTML = bot_score;
+
                 }
                 else if (computer_option === "Rock") {
                     document.getElementById("result").innerHTML = "Computer chose Rock. You win.";
+                    your_score++;
+                    document.getElementById("your-score").innerHTML = your_score;
                 }
                 round++;
                 document.getElementById("round-number").innerHTML = round;
@@ -96,17 +107,20 @@
                 }
                 else if (computer_option === "Rock") {
                     document.getElementById("result").innerHTML = "Computer chose Rock. Computer wins.";
+                    bot_score++;
+                    document.getElementById("bot-score").innerHTML = bot_score;
                 }
                 else if (computer_option === "Paper") {
                     document.getElementById("result").innerHTML = "Computer chose Paper. You win.";
+                    your_score++;
+                    document.getElementById("your-score").innerHTML = your_score;
+                   
                 }
                 round++;
                 document.getElementById("round-number").innerHTML = round;
             }
            
-            function mouseover(){
-
-            }
+            
 
 
         </script>
